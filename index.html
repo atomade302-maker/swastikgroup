@@ -56,6 +56,7 @@ function switchSite(name) {
                 <a href="#products">PRODUCTS <i class="fa-solid fa-chevron-down text-small"></i></a>
                 <a href="#services">SERVICES <i class="fa-solid fa-chevron-down text-small"></i></a>
                 <a href="#blog">BLOG</a>
+                <a href="javascript:void(0)" onclick="switchSite('resort')">BALAJI HOMESTAY</a>
                 <a href="javascript:void(0)" class="nav-contact-btn contact-trigger-btn">CONTACT US</a>
             
                 <!-- Mobile Only Helpline -->
@@ -579,6 +580,7 @@ function switchSite(name) {
                     <li><a href="#">Our Brands</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Blog</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchSite('resort')">Balaji Homestay</a></li>
                     <li><a href="javascript:void(0)" class="contact-trigger-btn">Contact Us</a></li>
                 </ul>
             </div>
@@ -650,9 +652,21 @@ function switchSite(name) {
 </div>
 
 <!-- Hotel & Restaurant Widget Callout -->
-<div class="hotel-callout-badge" id="hotelCalloutBadge" onclick="switchSite('resort')">
+<div class="hotel-callout-badge" id="hotelCalloutBadge">
     Our Hotel, Take a Look <i class="fa-solid fa-arrow-right"></i>
 </div>
+
+<!-- Hotel Widget -->
+<a href="javascript:void(0)" onclick="switchSite('resort')" class="hotel-widget" style="text-decoration: none;">
+    <div class="hotel-tab">
+        <span class="hotel-tab-sub">Our Associated Venture</span>
+        <span class="hotel-tab-title">Swastiks Balaji Homestay</span>
+        <i class="fa-solid fa-chevron-left hotel-icon"></i>
+    </div>
+    <div class="hotel-img-wrap">
+        <img src="l2.png" alt="Swastiks Balaji Homestay">
+    </div>
+</a>
 
 
 
@@ -917,7 +931,9 @@ function switchSite(name) {
                 }
             };
 
-            // Disabled modal click event for hotelCalloutBadge since it now triggers switchSite('resort') SPA switcher.
+            if (hotelCalloutBadge) {
+                hotelCalloutBadge.addEventListener('click', openModalHandler);
+            }
             if (mobileHotelBtn) {
                 mobileHotelBtn.addEventListener('click', openModalHandler);
             }
