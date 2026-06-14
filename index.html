@@ -19,17 +19,20 @@ function switchSite(name) {
     const main = document.getElementById('site-main');
     const resort = document.getElementById('site-resort');
     const badge = document.getElementById('hotelCalloutBadge');
+    const groupBadge = document.getElementById('groupCalloutBadge');
     
     if (name === 'resort') {
         main.style.display = 'none';
         resort.style.display = 'block';
         document.title = 'Swastiks Balaji Homestay | Madikeri, Coorg';
         if (badge) badge.style.display = 'none';
+        if (groupBadge) groupBadge.style.display = 'flex';
     } else {
         resort.style.display = 'none';
         main.style.display = 'block';
         document.title = 'Swastik Group | Construction Materials';
         if (badge) badge.style.display = 'flex';
+        if (groupBadge) groupBadge.style.display = 'none';
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -58,7 +61,12 @@ function switchSite(name) {
                 <a href="#blog">BLOG</a>
                 <a href="javascript:void(0)" onclick="switchSite('resort')">BALAJI HOMESTAY</a>
                 <a href="javascript:void(0)" class="nav-contact-btn contact-trigger-btn">CONTACT US</a>
-            
+
+                <!-- Mobile: Open Hotel Modal Button -->
+                <button id="mobileHotelBtn" style="display:none; background: linear-gradient(135deg,#ff8c00,#ff5400); color:#fff; border:none; padding:10px 20px; border-radius:50px; font-size:0.85rem; font-weight:700; letter-spacing:1px; cursor:pointer; margin-top:5px; text-transform:uppercase;">
+                    🏨 Our Hotel &amp; Restaurant
+                </button>
+
                 <!-- Mobile Only Helpline -->
                 <div class="mobile-helpline">
                     <span class="helpline-title">CONTACT HELPLINE</span>
@@ -1107,6 +1115,13 @@ function switchSite(name) {
                 <a href="#gallery">Gallery</a>
                 <a href="#book" class="nav-btn">Enquire & Book</a>
                 <a href="javascript:void(0)" class="nav-contact-btn resort-contact-trigger-btn">CONTACT US</a>
+            
+                <!-- Mobile Only Helpline -->
+                <div class="mobile-helpline">
+                    <span class="helpline-title">CONTACT HELPLINE</span>
+                    <a href="tel:9632021608" class="helpline-number">+91 9632021608</a>
+                    <a href="tel:8073791263" class="helpline-number">+91 8073791263</a>
+                </div>
             </nav>
 
             <button class="mobile-toggle" id="resortMobileToggle">
@@ -1910,6 +1925,11 @@ function switchSite(name) {
             </div>
         </div>
     </div>
+    <!-- Swastik Group Callout Badge -->
+    <div class="group-callout-badge" id="groupCalloutBadge" style="display:none" onclick="switchSite('main')">
+        Swastik Group, Take a Look <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
     <!-- Swastik Group Construction Site Widget -->
     <a href="javascript:void(0)" onclick="switchSite('main')" class="group-widget" style="text-decoration: none;">
         <div class="group-tab">

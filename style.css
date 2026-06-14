@@ -1534,9 +1534,7 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    .hotel-widget {
-        display: none !important;
-    }
+    
 
     /* Responsive Modal Tweaks */
     .contact-modal-content,
@@ -1593,11 +1591,7 @@ ul {
     50% { transform: translateY(-50%) scale(1.03); }
 }
 
-@media (max-width: 768px) {
-    .hotel-callout-badge {
-        display: none; /* Hide badge on mobile to keep layout clean */
-    }
-}
+
 
 /* ============================================================
    HOTEL WIDGET (RIGHT POP-OUT)
@@ -2129,6 +2123,36 @@ ul {
 
 
 
+
+/* Swastik Group Callout Badge */
+#site-resort .group-callout-badge {
+    position: fixed;
+    right: 15px;
+    top: calc(50% + 230px);
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #1e5128, #4e9f3d);
+    color: var(--white);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(30, 81, 40, 0.4);
+    z-index: 1000;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: bubblePulse 2s infinite;
+}
+#site-resort .group-callout-badge:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 8px 25px rgba(30, 81, 40, 0.6);
+    background: linear-gradient(135deg, #4e9f3d, #1e5128);
+}
+
 /* ==== RESORT SITE SCOPED STYLES ==== */
 /* ============================================================
    SWASTIK WILDERNESS RESORT - DESIGN SYSTEM & STYLE SHEET
@@ -2370,7 +2394,8 @@ ul {
 }
 
 @keyframes zoomSlow {
-#site-resort to { transform: scale(1); }
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
 }
 
 #site-resort .hero-overlay {
@@ -2484,9 +2509,9 @@ ul {
 }
 
 @keyframes scrollBounce {
-#site-resort 0%, #site-resort 20%, #site-resort 50%, #site-resort 80%, #site-resort 100% { transform: translateY(0) translateX(-50%); }
-#site-resort 40% { transform: translateY(-10px) translateX(-50%); }
-#site-resort 60% { transform: translateY(-5px) translateX(-50%); }
+0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+40% { transform: translateY(-10px) translateX(-50%); }
+60% { transform: translateY(-5px) translateX(-50%); }
 }
 
 /* ============================================================
@@ -3603,8 +3628,8 @@ ul {
 }
 
 @keyframes bounceRightGroup {
-#site-resort 0%, #site-resort 100% { transform: rotate(90deg) translateY(0); }
-#site-resort 50% { transform: rotate(90deg) translateY(-6px); }
+0%, 100% { transform: rotate(90deg) translateY(0); }
+50% { transform: rotate(90deg) translateY(-6px); }
 }
 
 /* ============================================================
@@ -3663,15 +3688,15 @@ ul {
 }
 
 @keyframes pulseGlowResort {
-#site-resort 0% {
+0% {
         box-shadow: 0 0 0 0 rgba(216, 178, 87, 0.7);
         transform: scale(1);
     }
-#site-resort 50% {
+50% {
         box-shadow: 0 0 0 10px rgba(216, 178, 87, 0);
         transform: scale(1.04);
     }
-#site-resort 100% {
+100% {
         box-shadow: 0 0 0 0 rgba(216, 178, 87, 0);
         transform: scale(1);
     }
@@ -3734,8 +3759,8 @@ ul {
 }
 
 @keyframes phonePulseResort {
-#site-resort from { transform: scale(1); }
-#site-resort to { transform: scale(1.1); }
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
 }
 
 #site-resort .contact-modal-header h3 {
@@ -3820,103 +3845,373 @@ ul {
 
 
 
+/* ============================================================
+   MOBILE OVERRIDES — FINAL CLEAN VERSION
+============================================================ */
 
-/* ==== MOBILE AND WIDGET OPTIMIZATIONS ==== */
-
-/* Mobile Optimization: Contact Numbers Aligned Correctly in Mobile Menu */
+/* mobile-helpline & mobileHotelBtn: hidden on desktop, shown in mobile menu */
 .mobile-helpline {
     display: none;
 }
+#mobileHotelBtn {
+    display: none;
+}
+
+@keyframes bubblePulseMobile {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255,106,0,0.4); }
+    50% { transform: scale(1.06); box-shadow: 0 6px 25px rgba(255,106,0,0.7); }
+}
+
+@keyframes bubblePulseMobileGold {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(216,178,87,0.4); }
+    50% { transform: scale(1.06); box-shadow: 0 6px 25px rgba(216,178,87,0.7); }
+}
+
+/* ===== 992px breakpoint: Tablets & small laptops ===== */
 @media (max-width: 992px) {
+
+    /* --- Widgets: collapse to peek-out tab --- */
+    .hotel-widget,
+    #site-resort .group-widget {
+        display: flex !important;
+        height: 160px !important;
+        width: auto !important;
+        transform: translateY(-50%) translateX(calc(100% - 44px)) !important;
+    }
+    .hotel-widget:hover,
+    .hotel-widget:focus,
+    #site-resort .group-widget:hover,
+    #site-resort .group-widget:focus {
+        transform: translateY(-50%) translateX(0) !important;
+    }
+
+    .hotel-tab,
+    #site-resort .group-tab {
+        width: 44px !important;
+        padding: 15px 10px !important;
+    }
+
+    /* Shorten the vertical tab text so it fits */
+    .hotel-tab-title {
+        font-size: 1rem !important;
+        letter-spacing: 1px !important;
+        max-height: 100px;
+        overflow: hidden;
+    }
+    #site-resort .group-tab-title {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.5px !important;
+        max-height: 110px;
+        overflow: hidden;
+    }
+
+    .hotel-tab-sub,
+    #site-resort .group-tab-sub {
+        display: none !important;
+    }
+    .hotel-icon,
+    #site-resort .group-icon {
+        font-size: 0.8rem !important;
+        margin-top: 6px !important;
+    }
+    .hotel-img-wrap,
+    #site-resort .group-img-wrap {
+        width: 145px !important;
+        height: 160px !important;
+    }
+
+    /* --- Callout badges: move to bottom-right corner --- */
+    .hotel-callout-badge,
+    #site-resort .group-callout-badge {
+        display: flex !important;
+        position: fixed !important;
+        right: 16px !important;
+        bottom: 24px !important;
+        top: auto !important;
+        transform: none !important;
+        font-size: 0.8rem !important;
+        padding: 9px 15px !important;
+        z-index: 1001 !important;
+        animation: bubblePulseMobile 2.2s ease-in-out infinite !important;
+        white-space: nowrap !important;
+    }
+    #site-resort .group-callout-badge {
+        animation: bubblePulseMobileGold 2.2s ease-in-out infinite !important;
+        right: auto !important;
+        left: 16px !important;
+    }
+
+    /* Prevent iOS zoom on input focus */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+
+    /* Resort hero title */
+    #site-resort .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+        line-height: 1.15 !important;
+    }
+}
+
+/* ===== 768px breakpoint: Mobile phones ===== */
+@media (max-width: 768px) {
+
+    /* --- Navigation --- */
     .mobile-helpline {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        width: 80%;
+        padding: 20px 0 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 85%;
     }
-    .mobile-helpline .helpline-title {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: var(--primary);
-        letter-spacing: 2px;
-    }
-    .mobile-helpline .helpline-number {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--white);
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-    .mobile-helpline .helpline-number:hover {
-        color: var(--primary);
-    }
-}
-
-/* Mobile Responsive Adjustments for Widgets and Callout Badges */
-@media (max-width: 992px) {
-    .hotel-callout-badge {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        top: auto;
-        transform: none;
-        font-size: 0.8rem;
-        padding: 8px 14px;
-        animation: bubblePulseMobile 2s infinite;
-    }
-}
-
-@keyframes bubblePulseMobile {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* Scoped Group Widget Styling for Mobile */
-@media (max-width: 992px) {
-    #site-resort .group-widget {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        top: auto;
-        transform: none;
-        background: linear-gradient(135deg, #1e5128, #4e9f3d);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 30px;
-        padding: 8px 14px;
-        z-index: 1000;
-        box-shadow: 0 4px 15px rgba(30, 81, 40, 0.4);
-        width: auto;
-        height: auto;
-    }
-    #site-resort .group-widget .group-tab {
-        writing-mode: horizontal-tb;
-        transform: none;
-        padding: 0;
-        flex-direction: row;
+    #mobileHotelBtn {
+        display: inline-flex !important;
+        align-items: center;
         gap: 8px;
     }
-    #site-resort .group-widget .group-tab-sub {
-        display: none;
+    .mobile-helpline .helpline-title {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 4px;
     }
-    #site-resort .group-widget .group-tab-title {
-        font-size: 0.85rem;
-        color: var(--white);
+    #site-resort .mobile-helpline .helpline-title {
+        color: #d8b257;
     }
-    #site-resort .group-widget .group-icon {
-        transform: none;
-        animation: none;
-        margin: 0;
-        font-size: 0.85rem;
-        color: var(--white);
+    .mobile-helpline .helpline-number {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff !important;
+        text-decoration: none;
     }
-    #site-resort .group-widget .group-img-wrap {
-        display: none;
+    .mobile-helpline .helpline-number:hover {
+        color: var(--primary) !important;
     }
-    #site-resort .group-widget:hover {
-        transform: scale(1.05);
+    #site-resort .mobile-helpline .helpline-number:hover {
+        color: #d8b257 !important;
+    }
+
+    /* --- Section headers --- */
+    .section-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+        margin-bottom: 28px !important;
+    }
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+    #site-resort .section-header {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #site-resort .section-title {
+        font-size: 2rem !important;
+    }
+
+    /* --- Hero buttons: stack vertically --- */
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+    .hero-buttons .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    /* Resort hero btns */
+    #site-resort .hero-btns {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+    #site-resort .hero-btns .btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    /* --- Logo sizing --- */
+    .brand-name {
+        font-size: 1.25rem !important;
+    }
+    .logo-icon {
+        font-size: 1.6rem !important;
+    }
+    #site-resort .brand-name {
+        font-size: 1.35rem !important;
+        letter-spacing: 1px !important;
+    }
+    #site-resort .brand-tag {
+        font-size: 0.55rem !important;
+        letter-spacing: 1.5px !important;
+    }
+    #site-resort .logo-icon {
+        font-size: 1.7rem !important;
+    }
+
+    /* --- Modals: scrollable on small screens --- */
+    .contact-modal-overlay,
+    .hotel-modal-overlay,
+    .quote-modal-overlay,
+    #site-resort .contact-modal-overlay,
+    #site-resort .room-gallery-modal {
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+        padding: 12px 10px !important;
+    }
+    .contact-modal-content,
+    .hotel-modal-content,
+    .quote-modal-content,
+    #site-resort .contact-modal-content,
+    #site-resort .room-gallery-content {
+        margin: 40px auto !important;
+        width: 100% !important;
+        max-width: calc(100vw - 20px) !important;
+        box-sizing: border-box !important;
+        padding: 24px 18px !important;
+    }
+    .hotel-modal-body {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .hotel-menu-wrapper {
+        height: auto !important;
+        max-height: 300px !important;
+    }
+    .hotel-modal-header h3 {
+        font-size: 1.6rem !important;
+    }
+    .contact-number-value {
+        font-size: 1.3rem !important;
+    }
+
+    /* Resort room gallery modal */
+    #site-resort .room-gallery-content {
+        border-radius: 14px !important;
+    }
+    #site-resort .room-gallery-body {
+        padding: 16px !important;
+    }
+    #site-resort .room-slideshow {
+        height: 220px !important;
+    }
+
+    /* --- Delivery truck slider: scale down --- */
+    .truck-wrapper,
+    .truck-img-wrap {
+        width: 100px !important;
+    }
+    .range-cards {
+        gap: 8px !important;
+        margin-top: 30px !important;
+        flex-wrap: wrap !important;
+    }
+    .range-card {
+        padding: 8px 10px !important;
+        min-width: 68px !important;
+        font-size: 0.78rem !important;
+    }
+    .km-mark span {
+        font-size: 0.65rem !important;
+    }
+
+    /* --- Products grid: 1 col --- */
+    .products-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .product-img {
+        height: 160px !important;
+    }
+
+    /* --- Booking form: 1 col on mobile --- */
+    #site-resort .book-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    #site-resort .book-form {
+        grid-template-columns: 1fr !important;
+    }
+    #site-resort .form-group-full {
+        grid-column: span 1 !important;
+    }
+    #site-resort .book-card {
+        padding: 24px 18px !important;
+    }
+
+    /* --- Gallery: 2-col on mobile --- */
+    #site-resort .gallery-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    #site-resort .gallery-item.wide,
+    #site-resort .gallery-item.tall {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    #site-resort .gallery-item {
+        height: 140px !important;
+    }
+
+    /* --- Activities grid: 1 col --- */
+    #site-resort .act-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Accommodations grid: 1 col --- */
+    #site-resort .acc-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Lightbox arrows: bigger touch targets --- */
+    .lightbox-arrow {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1rem !important;
+    }
+
+    /* --- Footer grid: 1 col on tiny phones --- */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+    #site-resort .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Contact number layout --- */
+    .contact-number-actions {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .contact-action-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    #site-resort .contact-number-actions {
+        flex-direction: column !important;
+    }
+    #site-resort .contact-action-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* --- Map iframe height --- */
+    .map-iframe-container iframe,
+    #site-resort .map-iframe-container iframe {
+        height: 250px !important;
+    }
+
+    /* --- Section padding tighter on mobile --- */
+    .section {
+        padding: 60px 0 !important;
+    }
+    #site-resort .section {
+        padding: 60px 0 !important;
     }
 }
