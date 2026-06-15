@@ -72,7 +72,7 @@ function switchSite(name) {
                 <a href="#about">ABOUT US</a>
                 <a href="#products">PRODUCTS <i class="fa-solid fa-chevron-down text-small"></i></a>
                 <a href="#services">SERVICES <i class="fa-solid fa-chevron-down text-small"></i></a>
-                <a href="#realestate">REAL ESTATE</a>
+                <a href="javascript:void(0)" class="properties-trigger-btn">REAL ESTATE</a>
                 <a href="#blog">BLOG</a>
                 <a href="javascript:void(0)" onclick="switchSite('resort')">BALAJI HOMESTAY</a>
                 <a href="javascript:void(0)" class="nav-contact-btn contact-trigger-btn">CONTACT US</a>
@@ -101,7 +101,7 @@ function switchSite(name) {
             
             <div class="nav-actions">
                 <div class="helpline">
-                    <div class="helpline-icon shake-ring"><i class="fa-solid fa-phone"></i></div>
+                    <div class="helpline-icon shake-ring contact-trigger-btn"><i class="fa-solid fa-phone"></i></div>
                     <div class="helpline-text">
                         <span class="helpline-title">CONTACT US</span>
                         <div class="helpline-numbers">
@@ -524,37 +524,7 @@ function switchSite(name) {
         </div>
     </section>
 
-    <!-- Real Estate Section -->
-    <section class="section real-estate-section" id="realestate">
-        <div class="container">
-            <div class="section-header text-center">
-                <p class="section-subtitle">SWASTIK PROPERTIES</p>
-                <h2 class="section-title">Featured <span class="highlight">Property</span></h2>
-                <p class="section-desc">Explore our premium agricultural property in Somwarpet, Coorg.</p>
-            </div>
-            
-            <div class="real-estate-grid mt-5" style="grid-template-columns: 1fr; max-width: 500px; margin: 0 auto;">
-                <!-- Property Card -->
-                <div class="property-card">
-                    <div class="property-img-wrap">
-                        <img src="prop_estate.png" alt="Coffee Estate">
-                    </div>
-                    <div class="property-info">
-                        <span class="property-tag"><i class="fa-solid fa-seedling"></i> Agriculture</span>
-                        <h3>Swastik Coffee Retreat</h3>
-                        <p class="property-loc"><i class="fa-solid fa-location-dot"></i> Near Somwarpet, Coorg</p>
-                        <p class="property-desc">Rich yielding Arabica & Robusta coffee estate with pepper and cardamom cultivation. Includes a vintage homestay building.</p>
-                        <div class="property-amenities">
-                            <span><i class="fa-solid fa-mug-hot"></i> Coffee Crop</span>
-                            <span><i class="fa-solid fa-tint"></i> Natural Stream</span>
-                            <span><i class="fa-solid fa-road"></i> Estate Road</span>
-                        </div>
-                        <a href="javascript:void(0)" class="btn btn-outline btn-sm contact-trigger-btn">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Delivery Range Section -->
     <section class="delivery-section" id="delivery">
@@ -714,10 +684,8 @@ function switchSite(name) {
                 </a>
                 <p class="footer-desc">Your trusted partner for quality construction materials and complete building solutions.</p>
                 <div class="social-links">
-                    <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61590883978461" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/swastik_traders_coorg/reels/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
             
@@ -738,7 +706,7 @@ function switchSite(name) {
                 <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#completed-projects">Our Projects</a></li>
-                    <li><a href="#realestate">Real Estate</a></li>
+                    <li><a href="javascript:void(0)" class="properties-trigger-btn">Real Estate</a></li>
                     <li><a href="#">Our Brands</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Blog</a></li>
@@ -847,7 +815,17 @@ function switchSite(name) {
     </div>
 </a>
 
-
+<!-- Featured Property Widget (LEFT POP-OUT, below Taxi) -->
+<a href="javascript:void(0)" id="propertyWidgetTrigger" class="property-widget properties-trigger-btn" style="text-decoration: none;">
+    <div class="property-widget-img-wrap">
+        <img src="prop_estate.png" alt="Swastik Properties">
+    </div>
+    <div class="property-widget-tab">
+        <span class="property-widget-tab-sub">Properties for Sale</span>
+        <span class="property-widget-tab-title">Land &amp; Properties</span>
+        <i class="fa-solid fa-chevron-right property-widget-icon"></i>
+    </div>
+</a>
 
 
 <script>
@@ -1179,6 +1157,32 @@ function switchSite(name) {
                 }
             });
         }
+
+        // Properties Modal Logic
+        const propertiesModal = document.getElementById('propertiesModal');
+        const closePropertiesModal = document.getElementById('closePropertiesModal');
+        const propertiesTriggers = document.querySelectorAll('.properties-trigger-btn');
+
+        if (propertiesModal && closePropertiesModal) {
+            const openPropertiesModalHandler = (e) => {
+                if (e) e.preventDefault();
+                propertiesModal.style.display = 'flex';
+            };
+
+            propertiesTriggers.forEach(btn => {
+                btn.addEventListener('click', openPropertiesModalHandler);
+            });
+
+            closePropertiesModal.addEventListener('click', () => {
+                propertiesModal.style.display = 'none';
+            });
+
+            propertiesModal.addEventListener('click', (e) => {
+                if (e.target === propertiesModal) {
+                    propertiesModal.style.display = 'none';
+                }
+            });
+        }
     });
 
         // Mobile Nav Menu Toggle
@@ -1306,7 +1310,7 @@ function switchSite(name) {
             
             <div class="nav-actions">
                 <div class="helpline">
-                    <div class="helpline-icon shake-ring" style="background: rgba(216, 178, 87, 0.1); color: #d8b257;"><i class="fa-solid fa-phone"></i></div>
+                    <div class="helpline-icon shake-ring resort-contact-trigger-btn" style="background: rgba(216, 178, 87, 0.1); color: #d8b257;"><i class="fa-solid fa-phone"></i></div>
                     <div class="helpline-text">
                         <span class="helpline-title" style="color: rgba(255, 255, 255, 0.6);">CONTACT US</span>
                         <div class="helpline-numbers">
@@ -1741,9 +1745,8 @@ function switchSite(name) {
                         A peaceful nature homestay venture in Somwarpet, Coorg, offering comfortable cottages, river fishing, camping tents and traditional food.
                     </p>
                     <div class="footer-socials">
-                        <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="javascript:void(0)" class="social-soon" title="Available Soon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61590883978461" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/swastik_traders_coorg/reels/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -2235,6 +2238,74 @@ function switchSite(name) {
                     <div class="contact-number-actions">
                         <a href="tel:9632021606" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
                         <a href="https://wa.me/919632021606" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PROPERTIES MODAL -->
+<div class="contact-modal-overlay" id="propertiesModal">
+    <div class="properties-modal-content">
+        <button class="properties-modal-close" id="closePropertiesModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="contact-modal-header" style="text-align: center;">
+            <i class="fa-solid fa-house-chimney contact-modal-icon shake-ring" style="color: #4caf7d; font-size: 2.2rem; margin-bottom: 10px; display: inline-block;"></i>
+            <h3 style="color: #fff; font-size: 1.5rem; font-weight: 700; margin: 0 0 5px 0;">Swastik Properties</h3>
+            <p style="color: #aaa; font-size: 0.85rem; margin: 0;">Premium Estates, Plots &amp; Properties for Sale in Coorg</p>
+        </div>
+        
+        <div class="properties-list-container">
+            <!-- Property 1: Coffee Estate -->
+            <div class="properties-modal-card">
+                <div class="properties-modal-card-img">
+                    <img src="prop_estate.png" alt="Swastik Coffee Retreat">
+                    <span class="properties-modal-tag">For Sale</span>
+                </div>
+                <div class="properties-modal-card-body">
+                    <span class="properties-modal-card-type"><i class="fa-solid fa-seedling"></i> Agriculture</span>
+                    <h4 class="properties-modal-card-title">Swastik Coffee Retreat</h4>
+                    <p class="properties-modal-card-loc"><i class="fa-solid fa-location-dot"></i> Near Somwarpet, Coorg</p>
+                    <p class="properties-modal-card-desc">Rich yielding Arabica &amp; Robusta coffee estate with pepper and cardamom cultivation. Includes a vintage homestay building.</p>
+                    <div class="properties-modal-card-actions">
+                        <a href="tel:8073791263" class="contact-action-btn call btn-ring" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px;"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/918073791263?text=Hi,%20I%20am%20interested%20in%20Swastik%20Coffee%20Retreat" target="_blank" class="contact-action-btn whatsapp" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px; background: #25d366; color: #fff; border-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 2: Plot -->
+            <div class="properties-modal-card">
+                <div class="properties-modal-card-img">
+                    <img src="prop_commercial.png" alt="Swastik Plots">
+                    <span class="properties-modal-tag">For Sale</span>
+                </div>
+                <div class="properties-modal-card-body">
+                    <span class="properties-modal-card-type"><i class="fa-solid fa-map"></i> Land / Plots</span>
+                    <h4 class="properties-modal-card-title">Premium Residential Plots</h4>
+                    <p class="properties-modal-card-loc"><i class="fa-solid fa-location-dot"></i> Somwarpet Town, Coorg</p>
+                    <p class="properties-modal-card-desc">Fully developed residential plots with water connection, electric lines, tar road access, and clear titles. Ready for construction.</p>
+                    <div class="properties-modal-card-actions">
+                        <a href="tel:8073791263" class="contact-action-btn call btn-ring" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px;"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/918073791263?text=Hi,%20I%20am%20interested%20in%20Premium%20Residential%20Plots" target="_blank" class="contact-action-btn whatsapp" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px; background: #25d366; color: #fff; border-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 3: Villa/Property -->
+            <div class="properties-modal-card">
+                <div class="properties-modal-card-img">
+                    <img src="prop_villa.png" alt="Swastik Luxury Villa">
+                    <span class="properties-modal-tag">For Sale</span>
+                </div>
+                <div class="properties-modal-card-body">
+                    <span class="properties-modal-card-type"><i class="fa-solid fa-building"></i> Villa / Property</span>
+                    <h4 class="properties-modal-card-title">Luxury Hillview Villa</h4>
+                    <p class="properties-modal-card-loc"><i class="fa-solid fa-location-dot"></i> Near Somwarpet, Coorg</p>
+                    <p class="properties-modal-card-desc">Modern architect-designed villa property. Ideal for luxury homestay business or a scenic vacation retreat with high potential.</p>
+                    <div class="properties-modal-card-actions">
+                        <a href="tel:8073791263" class="contact-action-btn call btn-ring" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px;"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/918073791263?text=Hi,%20I%20am%20interested%20in%20Luxury%20Hillview%20Villa" target="_blank" class="contact-action-btn whatsapp" style="flex: 1; text-align: center; justify-content: center; font-size: 0.75rem; padding: 8px 10px; background: #25d366; color: #fff; border-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
