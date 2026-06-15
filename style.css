@@ -3982,7 +3982,7 @@ ul {
 .mobile-helpline {
     display: none;
 }
-#mobileHotelBtn, #mobileTaxiBtn {
+#mobileHotelBtn, #mobileTaxiBtn, #resortMobileGroupBtn, #resortMobileTaxiBtn {
     display: none;
 }
 
@@ -4097,8 +4097,8 @@ ul {
     }
     #site-resort .group-callout-badge {
         animation: bubblePulseMobileGold 2.2s ease-in-out infinite !important;
-        right: auto !important;
-        left: 16px !important;
+        right: 16px !important;
+        left: auto !important;
     }
 
     /* Prevent iOS zoom on input focus */
@@ -4127,7 +4127,7 @@ ul {
         border-top: 1px solid rgba(255,255,255,0.1);
         width: 85%;
     }
-    #mobileHotelBtn, #mobileTaxiBtn {
+    #mobileHotelBtn, #mobileTaxiBtn, #resortMobileGroupBtn, #resortMobileTaxiBtn {
         display: inline-flex !important;
         align-items: center;
         gap: 8px;
@@ -4835,6 +4835,150 @@ ul {
         height: 220px !important;
     }
 }
+
+/* ============================================================
+   REAL ESTATE SECTION
+============================================================ */
+.real-estate-section {
+    background: var(--white);
+    padding: 90px 0;
+}
+.real-estate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+.property-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+.property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.property-img-wrap {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+.property-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.property-card:hover .property-img-wrap img {
+    transform: scale(1.08);
+}
+.property-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+.property-badge.sale {
+    background: #e74c3c;
+}
+.property-badge.lease {
+    background: #27ae60;
+}
+.property-price {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #ff9d00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.property-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.property-tag {
+    font-size: 0.72rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.property-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+.property-loc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.property-loc i {
+    color: var(--primary);
+}
+.property-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+.property-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.property-amenities span {
+    font-size: 0.78rem;
+    color: var(--dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.property-amenities span i {
+    color: var(--primary);
+}
+.property-info .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .real-estate-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+}
+
 
 
 

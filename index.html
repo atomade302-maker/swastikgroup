@@ -29,6 +29,7 @@ function switchSite(name) {
     const badge = document.getElementById('hotelCalloutBadge');
     const taxiBadge = document.getElementById('taxiCalloutBadge');
     const groupBadge = document.getElementById('groupCalloutBadge');
+    const resortBadge = document.getElementById('resortCalloutBadge');
     
     if (name === 'resort') {
         main.style.display = 'none';
@@ -37,6 +38,7 @@ function switchSite(name) {
         if (badge) badge.style.display = 'none';
         if (taxiBadge) taxiBadge.style.display = 'none';
         if (groupBadge) groupBadge.style.display = 'flex';
+        if (resortBadge) resortBadge.style.display = 'flex';
     } else {
         resort.style.display = 'none';
         main.style.display = 'block';
@@ -44,6 +46,7 @@ function switchSite(name) {
         if (badge) badge.style.display = 'flex';
         if (taxiBadge) taxiBadge.style.display = 'flex';
         if (groupBadge) groupBadge.style.display = 'none';
+        if (resortBadge) resortBadge.style.display = 'none';
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -69,6 +72,7 @@ function switchSite(name) {
                 <a href="#about">ABOUT US</a>
                 <a href="#products">PRODUCTS <i class="fa-solid fa-chevron-down text-small"></i></a>
                 <a href="#services">SERVICES <i class="fa-solid fa-chevron-down text-small"></i></a>
+                <a href="#realestate">REAL ESTATE</a>
                 <a href="#blog">BLOG</a>
                 <a href="javascript:void(0)" onclick="switchSite('resort')">BALAJI HOMESTAY</a>
                 <a href="javascript:void(0)" class="nav-contact-btn contact-trigger-btn">CONTACT US</a>
@@ -87,7 +91,7 @@ function switchSite(name) {
                 <div class="mobile-helpline">
                     <span class="helpline-title">CONTACT HELPLINE</span>
                     <a href="tel:8073791263" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: var(--primary); margin-right: 5px;"></i> +91 8073791263</a>
-                    <a href="tel:9731534141" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: var(--primary); margin-right: 5px;"></i> +91 97315 34141</a>
+                    <a href="tel:9632021606" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: var(--primary); margin-right: 5px;"></i> +91 96320 21606</a>
                 </div>
 </nav>
 
@@ -103,7 +107,7 @@ function switchSite(name) {
                         <div class="helpline-numbers">
                             <a href="tel:8073791263" class="helpline-number">+91 8073791263</a>
                             <span class="helpline-separator">/</span>
-                            <a href="tel:9731534141" class="helpline-number">+91 97315 34141</a>
+                            <a href="tel:9632021606" class="helpline-number">+91 96320 21606</a>
                         </div>
                     </div>
                 </div>
@@ -520,6 +524,38 @@ function switchSite(name) {
         </div>
     </section>
 
+    <!-- Real Estate Section -->
+    <section class="section real-estate-section" id="realestate">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-subtitle">SWASTIK PROPERTIES</p>
+                <h2 class="section-title">Featured <span class="highlight">Property</span></h2>
+                <p class="section-desc">Explore our premium agricultural property in Somwarpet, Coorg.</p>
+            </div>
+            
+            <div class="real-estate-grid mt-5" style="grid-template-columns: 1fr; max-width: 500px; margin: 0 auto;">
+                <!-- Property Card -->
+                <div class="property-card">
+                    <div class="property-img-wrap">
+                        <img src="prop_estate.png" alt="Coffee Estate">
+                    </div>
+                    <div class="property-info">
+                        <span class="property-tag"><i class="fa-solid fa-seedling"></i> Agriculture</span>
+                        <h3>Swastik Coffee Retreat</h3>
+                        <p class="property-loc"><i class="fa-solid fa-location-dot"></i> Near Somwarpet, Coorg</p>
+                        <p class="property-desc">Rich yielding Arabica & Robusta coffee estate with pepper and cardamom cultivation. Includes a vintage homestay building.</p>
+                        <div class="property-amenities">
+                            <span><i class="fa-solid fa-mug-hot"></i> Coffee Crop</span>
+                            <span><i class="fa-solid fa-tint"></i> Natural Stream</span>
+                            <span><i class="fa-solid fa-road"></i> Estate Road</span>
+                        </div>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-sm contact-trigger-btn">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Delivery Range Section -->
     <section class="delivery-section" id="delivery">
         <div class="container">
@@ -636,8 +672,7 @@ function switchSite(name) {
                     <li>
                         <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                         <div class="contact-info-text">
-                            <strong>Phone</strong>
-                            <p><a href="tel:8073791263">+91 8073791263</a> / <a href="tel:9731534141">+91 97315 34141</a></p>
+                            <p><a href="tel:8073791263">+91 8073791263</a> / <a href="tel:9632021606">+91 96320 21606</a></p>
                         </div>
                     </li>
                     <li>
@@ -703,6 +738,7 @@ function switchSite(name) {
                 <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#completed-projects">Our Projects</a></li>
+                    <li><a href="#realestate">Real Estate</a></li>
                     <li><a href="#">Our Brands</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Blog</a></li>
@@ -731,7 +767,7 @@ function switchSite(name) {
                     </li>
                     <li>
                         <i class="fa-solid fa-phone"></i>
-                        <p><a href="tel:8073791263">+91 8073791263</a><br><a href="tel:9731534141">+91 97315 34141</a></p>
+                        <p><a href="tel:8073791263">+91 8073791263</a><br><a href="tel:9632021606">+91 96320 21606</a></p>
                     </li>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
@@ -778,8 +814,8 @@ function switchSite(name) {
 </div>
 
 <!-- Hotel & Restaurant Widget Callout -->
-<div class="hotel-callout-badge resort-contact-trigger-btn" id="hotelCalloutBadge">
-    <i class="fa-solid fa-phone shake-ring"></i> Call Now
+<div class="hotel-callout-badge" id="hotelCalloutBadge">
+    Our Hotel, Take a Look <i class="fa-solid fa-arrow-right"></i>
 </div>
 
 <!-- Hotel Widget -->
@@ -1031,10 +1067,12 @@ function switchSite(name) {
         document.getElementById('quoteNeed').value = '';
     });
 
-    // Contact Modal Logic
-    const contactModal = document.getElementById('contactModal');
-    const closeContactModal = document.getElementById('closeContactModal');
-    const contactTriggers = document.querySelectorAll('.contact-trigger-btn');
+    // Contact & Modal Initialization on DOM Load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Contact Modal Logic
+        const contactModal = document.getElementById('contactModal');
+        const closeContactModal = document.getElementById('closeContactModal');
+        const contactTriggers = document.querySelectorAll('.contact-trigger-btn');
 
         if (contactTriggers && contactModal && closeContactModal) {
             contactTriggers.forEach(btn => {
@@ -1073,6 +1111,9 @@ function switchSite(name) {
                 }
             };
 
+            if (hotelCalloutBadge) {
+                hotelCalloutBadge.addEventListener('click', openModalHandler);
+            }
             if (mobileHotelBtn) {
                 mobileHotelBtn.addEventListener('click', openModalHandler);
             }
@@ -1123,6 +1164,10 @@ function switchSite(name) {
             if (mobileTaxiBtn) {
                 mobileTaxiBtn.addEventListener('click', openTaxiModalHandler);
             }
+            const resortMobileTaxiBtn = document.getElementById('resortMobileTaxiBtn');
+            if (resortMobileTaxiBtn) {
+                resortMobileTaxiBtn.addEventListener('click', openTaxiModalHandler);
+            }
 
             closeTaxiModal.addEventListener('click', () => {
                 taxiModal.style.display = 'none';
@@ -1134,6 +1179,7 @@ function switchSite(name) {
                 }
             });
         }
+    });
 
         // Mobile Nav Menu Toggle
         const mobileToggle = document.getElementById('mobileToggle');
@@ -1235,18 +1281,42 @@ function switchSite(name) {
                 <a href="#gallery">Gallery</a>
                 <a href="#book" class="nav-btn">Enquire & Book</a>
                 <a href="javascript:void(0)" class="nav-contact-btn resort-contact-trigger-btn">CONTACT US</a>
+
+                <!-- Mobile: Open Swastik Group Button -->
+                <button id="resortMobileGroupBtn" onclick="switchSite('main')" style="display:none; background: linear-gradient(135deg, #1b3a4b, #2e6f40); color:#fff; border:none; padding:10px 20px; border-radius:50px; font-size:0.85rem; font-weight:700; letter-spacing:1px; cursor:pointer; margin-top:5px; text-transform:uppercase;">
+                    🏗️ Swastik Group
+                </button>
+
+                <!-- Mobile: Open Taxi Modal Button -->
+                <button id="resortMobileTaxiBtn" style="display:none; background: linear-gradient(135deg, #ffd700, #ff8c00); color:#000; border:none; padding:10px 20px; border-radius:50px; font-size:0.85rem; font-weight:700; letter-spacing:1px; cursor:pointer; margin-top:5px; text-transform:uppercase;">
+                    🚕 Swastiks Taxi Service
+                </button>
             
                 <!-- Mobile Only Helpline -->
                 <div class="mobile-helpline">
                     <span class="helpline-title">CONTACT HELPLINE</span>
                     <a href="tel:8073791263" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: #d8b257; margin-right: 5px;"></i> +91 8073791263</a>
-                    <a href="tel:9731534141" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: #d8b257; margin-right: 5px;"></i> +91 97315 34141</a>
+                    <a href="tel:9632021606" class="helpline-number"><i class="fa-solid fa-phone shake-ring" style="color: #d8b257; margin-right: 5px;"></i> +91 96320 21606</a>
                 </div>
             </nav>
 
             <button class="mobile-toggle" id="resortMobileToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
+            
+            <div class="nav-actions">
+                <div class="helpline">
+                    <div class="helpline-icon shake-ring" style="background: rgba(216, 178, 87, 0.1); color: #d8b257;"><i class="fa-solid fa-phone"></i></div>
+                    <div class="helpline-text">
+                        <span class="helpline-title" style="color: rgba(255, 255, 255, 0.6);">CONTACT US</span>
+                        <div class="helpline-numbers">
+                            <a href="tel:8073791263" class="helpline-number" style="color: #fff;">+91 8073791263</a>
+                            <span class="helpline-separator" style="color: rgba(255, 255, 255, 0.4);">/</span>
+                            <a href="tel:9632021606" class="helpline-number" style="color: #fff;">+91 96320 21606</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -1538,7 +1608,7 @@ function switchSite(name) {
                             <h4>Phone / WhatsApp</h4>
                             <p>
                                 <a href="tel:8073791263" style="color: inherit;">+91 8073791263</a> / <br>
-                                <a href="tel:9731534141" style="color: inherit;">+91 97315 34141</a>
+                                <a href="tel:9632021606" style="color: inherit;">+91 96320 21606</a>
                             </p>
                         </div>
                     </div>
@@ -1698,7 +1768,7 @@ function switchSite(name) {
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
-                            <span>+91 8073791263<br>+91 97315 34141</span>
+                            <span>+91 8073791263<br>+91 96320 21606</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-envelope"></i>
@@ -1990,9 +2060,10 @@ function switchSite(name) {
         }
 
         // Contact Modal Logic
-        const contactModal = document.getElementById('resortContactModal');
-        const closeContactModal = document.getElementById('resortCloseContactModal');
-        const contactTriggers = document.querySelectorAll('.resort-contact-trigger-btn');
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactModal = document.getElementById('resortContactModal');
+            const closeContactModal = document.getElementById('resortCloseContactModal');
+            const contactTriggers = document.querySelectorAll('.resort-contact-trigger-btn');
 
             if (contactTriggers && contactModal && closeContactModal) {
                 contactTriggers.forEach(btn => {
@@ -2012,9 +2083,15 @@ function switchSite(name) {
                     }
                 });
             }
+        });
     </script>
 
     <!-- Resort Modals moved to bottom of body -->
+    <!-- Resort Callout Badge (LEFT SIDE, shown only on resort site) -->
+    <div class="taxi-callout-badge resort-contact-trigger-btn" id="resortCalloutBadge" style="display:none">
+        <i class="fa-solid fa-phone shake-ring"></i> Call Now
+    </div>
+
     <!-- Swastik Group Callout Badge -->
     <div class="group-callout-badge" id="groupCalloutBadge" style="display:none" onclick="switchSite('main')">
         Swastik Group, Take a Look <i class="fa-solid fa-arrow-right"></i>
@@ -2069,10 +2146,10 @@ function switchSite(name) {
                     <div class="incoming-text">INCOMING CALL...</div>
                     <div class="incoming-call-icon"><i class="fa-solid fa-phone"></i></div>
                     <div class="contact-number-name">Helpline 2</div>
-                    <div class="contact-number-value">+91 97315 34141</div>
+                    <div class="contact-number-value">+91 96320 21606</div>
                     <div class="contact-number-actions">
-                        <a href="tel:9731534141" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/919731534141" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:9632021606" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/919632021606" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -2154,10 +2231,10 @@ function switchSite(name) {
                     <div class="incoming-text" style="color: #ffd700;">TAXI BOOKING...</div>
                     <div class="incoming-call-icon" style="background: #ffd700; color: #000;"><i class="fa-solid fa-taxi"></i></div>
                     <div class="contact-number-name">Support Helpline</div>
-                    <div class="contact-number-value">+91 97315 34141</div>
+                    <div class="contact-number-value">+91 96320 21606</div>
                     <div class="contact-number-actions">
-                        <a href="tel:9731534141" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/919731534141" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:9632021606" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/919632021606" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -2194,10 +2271,10 @@ function switchSite(name) {
                     <div class="incoming-text">INCOMING CALL...</div>
                     <div class="incoming-call-icon"><i class="fa-solid fa-phone"></i></div>
                     <div class="contact-number-name">Booking Support</div>
-                    <div class="contact-number-value">+91 97315 34141</div>
+                    <div class="contact-number-value">+91 96320 21606</div>
                     <div class="contact-number-actions">
-                        <a href="tel:9731534141" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/919731534141" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a href="tel:9632021606" class="contact-action-btn call btn-ring"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/919632021606" target="_blank" class="contact-action-btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
