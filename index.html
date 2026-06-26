@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swastik Group | Balaji Homestay Somwarpet</title>
-    <meta name="description" content="Swastik Group - Leading construction materials supplier. Also home to Swastiks Balaji Homestay, Somwarpet, Coorg.">
+    <title>Swastik Group | Homestay and Resorts Somwarpet</title>
+    <meta name="description" content="Swastik Group - Leading construction materials supplier. Also home to Swastiks Homestay and Resorts, Somwarpet, Coorg.">
     <link rel="stylesheet" href="style.css">
     <style>
     /* Cloud product extras */
@@ -13,6 +13,37 @@
     .cloud-filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
     .cloud-filter-btn{padding:7px 18px;border-radius:20px;border:1px solid rgba(0,0,0,0.15);background:transparent;color:#555;font-size:0.82rem;cursor:pointer;transition:all .2s;font-family:inherit;}
     .cloud-filter-btn.active,.cloud-filter-btn:hover{background:#e05a1e;border-color:#e05a1e;color:#fff;}
+
+    /* Blossom Resort Campus Section Extras */
+    #site-resort .blossom-category {
+        margin-bottom: 60px;
+    }
+    #site-resort .blossom-cat-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: var(--primary); /* Deep Forest Green */
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid var(--accent); /* Gold Accent */
+        padding-bottom: 10px;
+    }
+    #site-resort .blossom-video-item {
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: var(--shadow);
+        grid-column: span 2;
+        height: 100%;
+        min-height: 240px;
+    }
+    #site-resort .blossom-video-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +65,7 @@ function switchSite(name) {
     if (name === 'resort') {
         main.style.display = 'none';
         resort.style.display = 'block';
-        document.title = 'Swastiks Balaji Homestay | Somwarpet, Coorg';
+        document.title = 'Swastiks Homestay and Resorts | Somwarpet, Coorg';
         if (badge) badge.style.display = 'none';
         if (taxiBadge) taxiBadge.style.display = 'none';
         if (groupBadge) groupBadge.style.display = 'flex';
@@ -74,7 +105,7 @@ function switchSite(name) {
                 <a href="#services">SERVICES <i class="fa-solid fa-chevron-down text-small"></i></a>
                 <a href="javascript:void(0)" class="properties-trigger-btn">REAL ESTATE</a>
                 <a href="#blog">BLOG</a>
-                <a href="javascript:void(0)" onclick="switchSite('resort')">BALAJI HOMESTAY</a>
+                <a href="javascript:void(0)" onclick="switchSite('resort')">HOMESTAY & RESORTS</a>
                 <a href="javascript:void(0)" class="nav-contact-btn contact-trigger-btn">CONTACT US</a>
 
                 <!-- Mobile: Open Hotel Modal Button -->
@@ -262,14 +293,6 @@ function switchSite(name) {
                         <p>BMM Steel</p>
                     </div>
                     <div class="brand-logo-item">
-                        <img src="tata logo.jpeg" alt="Tata Tiscon">
-                        <p>Tata Tiscon</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="panther logo.webp" alt="Jindal Panther">
-                        <p>Jindal Panther</p>
-                    </div>
-                    <div class="brand-logo-item">
                         <img src="acc logo.png" alt="ACC Cement">
                         <p>ACC Cement</p>
                     </div>
@@ -284,14 +307,6 @@ function switchSite(name) {
                     <div class="brand-logo-item">
                         <img src="bmm logo.png" alt="BMM Steel">
                         <p>BMM Steel</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="tata logo.jpeg" alt="Tata Tiscon">
-                        <p>Tata Tiscon</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="panther logo.webp" alt="Jindal Panther">
-                        <p>Jindal Panther</p>
                     </div>
                 </div>
                 <!-- Duplicate Track for seamless loop -->
@@ -313,14 +328,6 @@ function switchSite(name) {
                         <p>BMM Steel</p>
                     </div>
                     <div class="brand-logo-item">
-                        <img src="tata logo.jpeg" alt="Tata Tiscon">
-                        <p>Tata Tiscon</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="panther logo.webp" alt="Jindal Panther">
-                        <p>Jindal Panther</p>
-                    </div>
-                    <div class="brand-logo-item">
                         <img src="acc logo.png" alt="ACC Cement">
                         <p>ACC Cement</p>
                     </div>
@@ -335,14 +342,6 @@ function switchSite(name) {
                     <div class="brand-logo-item">
                         <img src="bmm logo.png" alt="BMM Steel">
                         <p>BMM Steel</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="tata logo.jpeg" alt="Tata Tiscon">
-                        <p>Tata Tiscon</p>
-                    </div>
-                    <div class="brand-logo-item">
-                        <img src="panther logo.webp" alt="Jindal Panther">
-                        <p>Jindal Panther</p>
                     </div>
                 </div>
             </div>
@@ -410,42 +409,28 @@ function switchSite(name) {
                     <div class="product-img"><img src="acc cement.jpg" alt="ACC Cement"></div>
                     <div class="product-details">
                         <h4>ACC PPC Cement</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('ACC PPC Cement')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-primary full-width">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img"><img src="meenashi tmt image.png" alt="Meenashi TMT"></div>
                     <div class="product-details">
                         <h4>Meenashi TMT Bar</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('Meenashi TMT Bar')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"><img src="TATA-Tiscon-500D.jpg" alt="Tata Tiscon 500D TMT Bar"></div>
-                    <div class="product-details">
-                        <h4>Tata Tiscon 500D TMT Bar</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('Tata Tiscon 500D TMT Bar')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"><img src="jindal-panther-tmt-bar.jpg" alt="Jindal Panther TMT Bar"></div>
-                    <div class="product-details">
-                        <h4>Jindal Panther TMT Bar</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('Jindal Panther TMT Bar')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-primary full-width">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img"><img src="bricks_blocks.png" alt="Product"></div>
                     <div class="product-details">
                         <h4>Solid Concrete Block</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('Solid Concrete Block')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-primary full-width">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img"><img src="Maha-cement .jpg" alt="Maha Cement"></div>
                     <div class="product-details">
                         <h4>Maha Cement</h4>
-                        <button class="btn btn-outline-primary full-width" onclick="openEnquiry('Maha Cement')">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-primary full-width">ENQUIRE NOW <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -756,7 +741,7 @@ function switchSite(name) {
                     <li><a href="#">Our Brands</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="javascript:void(0)" onclick="switchSite('resort')">Balaji Homestay</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchSite('resort')">Homestay and Resorts</a></li>
                     <li><a href="javascript:void(0)" class="contact-trigger-btn">Contact Us</a></li>
                 </ul>
             </div>
@@ -836,11 +821,11 @@ function switchSite(name) {
 <a href="javascript:void(0)" onclick="switchSite('resort')" class="hotel-widget" style="text-decoration: none;">
     <div class="hotel-tab">
         <span class="hotel-tab-sub">Our Associated Venture</span>
-        <span class="hotel-tab-title">Swastiks Balaji Homestay</span>
+        <span class="hotel-tab-title">Swastiks Homestay and Resorts</span>
         <i class="fa-solid fa-chevron-left hotel-icon"></i>
     </div>
     <div class="hotel-img-wrap">
-        <img src="l2.png" alt="Swastiks Balaji Homestay">
+        <img src="l2.png" alt="Swastiks Homestay and Resorts">
     </div>
 </a>
 
@@ -1123,7 +1108,6 @@ function switchSite(name) {
         const hotelModal = document.getElementById('hotelModal');
         const closeHotelModal = document.getElementById('closeHotelModal');
         const hotelPromoVideo = document.getElementById('hotelPromoVideo');
-        const hotelCookingVideo = document.getElementById('hotelCookingVideo');
         const hotelMenuImg = document.getElementById('hotelMenuImg');
         const menuZoomOverlay = document.getElementById('menuZoomOverlay');
 
@@ -1133,10 +1117,6 @@ function switchSite(name) {
                 if (hotelPromoVideo) {
                     hotelPromoVideo.currentTime = 0;
                     hotelPromoVideo.play().catch(err => console.log('Autoplay blocked:', err));
-                }
-                if (hotelCookingVideo) {
-                    hotelCookingVideo.currentTime = 0;
-                    hotelCookingVideo.play().catch(err => console.log('Autoplay blocked:', err));
                 }
             };
 
@@ -1152,9 +1132,6 @@ function switchSite(name) {
                 if (hotelPromoVideo) {
                     hotelPromoVideo.pause();
                 }
-                if (hotelCookingVideo) {
-                    hotelCookingVideo.pause();
-                }
             });
 
             hotelModal.addEventListener('click', (e) => {
@@ -1162,9 +1139,6 @@ function switchSite(name) {
                     hotelModal.style.display = 'none';
                     if (hotelPromoVideo) {
                         hotelPromoVideo.pause();
-                    }
-                    if (hotelCookingVideo) {
-                        hotelCookingVideo.pause();
                     }
                 }
             });
@@ -1330,7 +1304,7 @@ function switchSite(name) {
                 </div>
                 <div class="logo-text">
                     <span class="brand-name">Swastiks</span>
-                    <span class="brand-tag">Balaji Homestay</span>
+                    <span class="brand-tag">Homestay and Resorts</span>
                 </div>
             </a>
             
@@ -1340,6 +1314,7 @@ function switchSite(name) {
                 <a href="#accommodations">Stay</a>
                 <a href="#activities">Activities</a>
                 <a href="#gallery">Gallery</a>
+                <a href="#blossom-campus">Blossom Campus</a>
                 <a href="#book" class="nav-btn">Enquire & Book</a>
                 <a href="javascript:void(0)" class="nav-contact-btn resort-contact-trigger-btn">CONTACT US</a>
 
@@ -1393,7 +1368,7 @@ function switchSite(name) {
         <div class="hero-content">
             <div class="hero-subtitle">Somwarpet, Coorg</div>
             <h1 class="hero-title">Experience Nature's <br><span style="color: var(--accent);">Purest Embrace</span></h1>
-            <p class="hero-desc">Welcome to Swastiks Balaji Homestay. A peaceful sanctuary of luxury stays, adventure camping, fishing, and campfire memories in Somwarpet.</p>
+            <p class="hero-desc">Welcome to Swastiks Homestay and Resorts. A peaceful sanctuary of luxury stays, adventure camping, fishing, and campfire memories in Somwarpet.</p>
             <div class="hero-btns">
                 <a href="#accommodations" class="btn btn-primary">Explore Stay Option</a>
                 <a href="#book" class="btn btn-outline">Check Availability</a>
@@ -1412,7 +1387,7 @@ function switchSite(name) {
                 <p class="section-subtitle">Discover Swastiks</p>
                 <h2 class="section-title">Where Serenity <br>Meets Adventure</h2>
                 <p class="section-desc" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                    Located in Somwarpet, Coorg, Swastiks Balaji Homestay offers a unique combination of peaceful retreat and outdoor excitement. Wake up to the aroma of coffee blossoms, spend your day fishing by the river pond, and end your evening under a canopy of stars by a roaring bonfire.
+                    Located in Somwarpet, Coorg, Swastiks Homestay and Resorts offers a unique combination of peaceful retreat and outdoor excitement. Wake up to the aroma of coffee blossoms, spend your day fishing by the river pond, and end your evening under a canopy of stars by a roaring bonfire.
                 </p>
                 
                 <div class="about-features">
@@ -1645,6 +1620,157 @@ function switchSite(name) {
         </div>
     </section>
 
+    <!-- The Blossom Resort Campus Section -->
+    <section class="section section-bg-light" id="blossom-campus">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Premium Extension</p>
+                <h2 class="section-title">The Blossom Resort Campus</h2>
+                <p class="section-desc">We are delighted to present our newly added luxury campus. Browse through the images of our new premium suites, pristine pool, and campus views.</p>
+            </div>
+
+            <!-- Category 1: Resort Campus & Aerial Views -->
+            <div class="blossom-category">
+                <h3 class="blossom-cat-title">
+                    <i class="fa-solid fa-hotel"></i> Resort Campus &amp; Aerial Views
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item wide" onclick="openLightbox(8)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.44 PM.jpeg" alt="Aerial view of the stunning Blossom Resort campus nestled in Coorg greenery">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="blossom-video-item">
+                        <video controls loop muted playsinline>
+                            <source src="new images resort 26-06-2026/WhatsApp Video 2026-06-26 at 2.31.37 PM.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(9)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (1).jpeg" alt="The Blossom Coorg Resort main entrance gate welcomes you">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(10)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM (2).jpeg" alt="Charming ground cottage exterior with cozy verandas">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(11)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM.jpeg" alt="Beautifully paved tiled cottage walkways">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(12)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.46 PM (1).jpeg" alt="Two-story red-brick cottage and main reception area">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(13)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM.jpeg" alt="The Blossom Coorg Resort official logo and welcome board">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Luxury Suites & Rooms -->
+            <div class="blossom-category">
+                <h3 class="blossom-cat-title">
+                    <i class="fa-solid fa-bed"></i> Luxury Suites &amp; Rooms
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item wide" onclick="openLightbox(14)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.32 PM.jpeg" alt="Luxurious twin-bed room layout with sleek vanity mirror and modern amenities">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(15)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (2).jpeg" alt="Spacious bedroom suite opening directly to the scenic balcony">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(16)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM (1).jpeg" alt="Elegant deluxe double bed suite featuring stylish orange highlight wall">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item wide" onclick="openLightbox(17)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM (2).jpeg" alt="Sophisticated guest room styled with premium polished wood flooring">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(18)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.51 PM.jpeg" alt="Premium suite view showing sliding doors to private sit-out deck">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Swimming Pool & Evening Leisure -->
+            <div class="blossom-category">
+                <h3 class="blossom-cat-title">
+                    <i class="fa-solid fa-person-swimming"></i> Swimming Pool &amp; Evening Leisure
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item wide" onclick="openLightbox(19)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (3).jpeg" alt="Shimmering crystal clear resort swimming pool under daylight">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(20)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.38 PM.jpeg" alt="Illuminated pool glow at twilight, creating a magical atmosphere">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(21)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.49 PM.jpeg" alt="Night lights reflecting on the calm pool surface next to resort building">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4: Verandas & Balconies -->
+            <div class="blossom-category">
+                <h3 class="blossom-cat-title">
+                    <i class="fa-solid fa-mountain-sun"></i> Verandas &amp; Balconies
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(22)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.32 PM (1).jpeg" alt="Relaxing ground floor veranda seating area running along rooms">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item wide" onclick="openLightbox(23)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.35 PM.jpeg" alt="Upper floor balcony corridors with expansive views of Coorg landscape">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(24)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.46 PM.jpeg" alt="Warm fairy light string glow decorating upper deck balconies at dusk">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Recreation, Dining & Facilities -->
+            <div class="blossom-category">
+                <h3 class="blossom-cat-title">
+                    <i class="fa-solid fa-gamepad"></i> Recreation, Dining &amp; Facilities
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(25)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM (1).jpeg" alt="Vibrant kids play zone with swing sets and multi-slide towers">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(26)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.34 PM.jpeg" alt="Indoor activities room with professional green-felt pool table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(27)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.47 PM.jpeg" alt="Recreation zone with secondary view of billiards table setup">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(28)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM.jpeg" alt="Sleek, well-appointed indoor restaurant dining hall for guests">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item wide" onclick="openLightbox(29)">
+                        <img src="new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.48 PM.jpeg" alt="Open-sided, spacious event and conference hall perfect for gatherings">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Booking Enquiry Section -->
     <section class="section book-section" id="book">
         <div class="container book-grid">
@@ -1660,7 +1786,7 @@ function switchSite(name) {
                         <div class="book-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="book-contact-details">
                             <h4>Location</h4>
-                            <p>Balaji Homestay, Somwarpet, Coorg, Karnataka 571236</p>
+                            <p>Homestay and Resorts, Somwarpet, Coorg, Karnataka 571236</p>
                         </div>
                     </div>
                     <div class="book-contact-item">
@@ -1765,7 +1891,7 @@ function switchSite(name) {
             <div class="map-details">
                 <p class="section-subtitle">Our Location</p>
                 <h2 class="section-title" style="color: var(--primary);">How to Reach Us</h2>
-                <p style="margin-bottom: 24px; color: var(--text-muted);">We are located in Somwarpet, Coorg. Use the interactive map to navigate directly to Balaji Homestay.</p>
+                <p style="margin-bottom: 24px; color: var(--text-muted);">We are located in Somwarpet, Coorg. Use the interactive map to navigate directly to Homestay and Resorts.</p>
                 <a href="https://www.google.com/maps/place/12%C2%B026'12.9%22N+75%C2%B043'34.0%22E/@12.4369106,75.7235451,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.4369106!4d75.72612?hl=en&entry=ttu" target="_blank" class="btn btn-primary">
                     Open in Google Maps <i class="fa-solid fa-map-location-dot"></i>
                 </a>
@@ -1795,7 +1921,7 @@ function switchSite(name) {
                         </div>
                         <div class="logo-text">
                             <span class="brand-name" style="color: var(--white);">Swastiks</span>
-                            <span class="brand-tag">Balaji Homestay</span>
+                            <span class="brand-tag">Homestay and Resorts</span>
                         </div>
                     </a>
                     <p class="footer-desc">
@@ -1815,6 +1941,7 @@ function switchSite(name) {
                         <li><a href="#accommodations">Accommodations</a></li>
                         <li><a href="#activities">Activities</a></li>
                         <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#blossom-campus">Blossom Campus</a></li>
                         <li><a href="javascript:void(0)" onclick="switchSite('main')">Swastik Construction</a></li>
                     </ul>
                 </div>
@@ -1824,7 +1951,7 @@ function switchSite(name) {
                     <ul class="footer-contact">
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>Balaji Homestay, Somwarpet, Coorg, Karnataka 571236</span>
+                            <span>Homestay and Resorts, Somwarpet, Coorg, Karnataka 571236</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
@@ -1839,7 +1966,7 @@ function switchSite(name) {
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Swastiks Balaji Homestay. All Rights Reserved.</p>
+                <p>&copy; 2026 Swastiks Homestay and Resorts. All Rights Reserved.</p>
                 <p>An Associated Venture of Swastik Group</p>
             </div>
         </div>
@@ -1972,7 +2099,30 @@ function switchSite(name) {
             { src: 'l2.png', caption: 'Mist covered hills in morning' },
             { src: 'food.jpeg', caption: 'Delicious local cuisine' },
             { src: 'fishing.png', caption: 'Enjoying fishing by the pond' },
-            { src: 'l3.png', caption: 'Trekking pathways in estate' }
+            { src: 'l3.png', caption: 'Trekking pathways in estate' },
+            // Blossom Campus new images
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.44 PM.jpeg', caption: 'Aerial View of the Resort & Surrounding Forest' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (1).jpeg', caption: 'The Blossom Coorg Resort Main Entrance Gate' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM (2).jpeg', caption: 'Ground Cottage Exterior & Lush Veranda' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM.jpeg', caption: 'Cottage Walkway and Tiled Access Ramps' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.46 PM (1).jpeg', caption: 'Two-Story Red-Brick Cottage & Reception Patio' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM.jpeg', caption: 'The Blossom Coorg Resort Logo' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.32 PM.jpeg', caption: 'Premium Room with Two Double Beds & Vanity Area' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (2).jpeg', caption: 'Luxury Bedroom with Balcony Access' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM (1).jpeg', caption: 'Spacious Suite with Double Beds & Accent Wall' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM (2).jpeg', caption: 'Elegant Bedroom featuring Premium Wooden Flooring' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.51 PM.jpeg', caption: 'Luxury Room with Private Dining Balcony' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.33 PM (3).jpeg', caption: 'Daytime View of Swimming Pool' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.38 PM.jpeg', caption: 'Swimming Pool Evening Illumination' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.49 PM.jpeg', caption: 'Night Poolside View of Resort Main Building' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.32 PM (1).jpeg', caption: 'Ground Floor Veranda Corridor Seating' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.35 PM.jpeg', caption: 'Upper Balcony Passage overlooking Coffee Estate' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.46 PM.jpeg', caption: 'Evening Balcony Corridor with Ambient Fairy Lights' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.31 PM (1).jpeg', caption: 'Outdoor Kids Play Ground with Swings & Slide' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.34 PM.jpeg', caption: 'Indoor Games Room with Billiards/Pool Table' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.47 PM.jpeg', caption: 'Recreation Lounge & Pool Table Area' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.43 PM.jpeg', caption: 'Spacious Indoor Restaurant Dining Hall' },
+            { src: 'new images resort 26-06-2026/WhatsApp Image 2026-06-26 at 2.31.48 PM.jpeg', caption: 'Covered Open-Air Event & Conference Hall' }
         ];
         
         let activeLightboxIdx = 0;
@@ -2228,16 +2378,9 @@ function switchSite(name) {
         <div class="hotel-modal-body">
             <div class="hotel-modal-video-col">
                 <h4 class="hotel-sub-title"><i class="fa-solid fa-play"></i> Watch Video Tour</h4>
-                <div class="hotel-video-wrapper" style="margin-bottom: 20px;">
+                <div class="hotel-video-wrapper">
                     <video id="hotelPromoVideo" controls loop muted playsinline>
                         <source src="hotel video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <h4 class="hotel-sub-title"><i class="fa-solid fa-utensils"></i> Watch Cooking Video</h4>
-                <div class="hotel-video-wrapper">
-                    <video id="hotelCookingVideo" controls loop muted playsinline>
-                        <source src="cooking video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -2383,7 +2526,7 @@ function switchSite(name) {
         <button class="contact-modal-close" id="resortCloseContactModal"><i class="fa-solid fa-xmark"></i></button>
         <div class="contact-modal-header">
             <i class="fa-solid fa-phone-volume contact-modal-icon shake-ring"></i>
-            <h3>Contact Swastiks Balaji Homestay</h3>
+            <h3>Contact Swastiks Homestay and Resorts</h3>
             <p>Call or message us directly on WhatsApp</p>
         </div>
         <div class="contact-numbers-container">
